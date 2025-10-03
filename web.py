@@ -1,48 +1,13 @@
-# EX01 Developing a Simple Webserver
-## Date:
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
-## AIM:
-To develop a simple webserver to serve html pages and display the Device Specifications of your Laptop.
-
-## DESIGN STEPS:
-### Step 1: 
-HTML content creation.
-
-### Step 2:
-Design of webserver workflow.
-
-### Step 3:
-Implementation using Python code.
-
-### Step 4:
-Import the necessary modules.
-
-### Step 5:
-Define a custom request handler.
-
-### Step 6:
-Start an HTTP server on a specific port.
-
-### Step 7:
-Run the Python script to serve web pages.
-
-### Step 8:
-Serve the HTML pages.
-
-### Step 9:
-Start the server script and check for errors.
-
-### Step 10:
-Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
-
-## PROGRAM:
+content = """
 <!DOCTYPE html>
 <html>
 <head>
     <title>Top 5 Revenue Generating Software Companies</title>
 </head>
 <body>
-    <table>
+    <table border="10px">
         <caption>Top 5 Revenue Generating Software Companies</caption>
         <tr>
             <th>s.no</th>
@@ -77,21 +42,6 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
     </table>
 </body>
 </html>
-
-Python code:
-
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
-content = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Webserver</title>
-</head>
-<body>
-    <h1>Welcome!</h1>
-</body>
-</html>
 """
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -106,9 +56,3 @@ server_address = ('', 8000)
 httpd = HTTPServer(server_address, MyHandler)
 print("My webserver is running...")
 httpd.serve_forever()
-
-## OUTPUT:
-![alt text](<../Screenshot (2).png>)
-
-## RESULT:
-The program for implementing simple webserver is executed successfully.
